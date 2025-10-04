@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="school_game"
-run/main_scene="uid://5jjsbrlvwas"
+run/main_scene="uid://dufs03881x6hv"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+player=""
 
 [input]
 
