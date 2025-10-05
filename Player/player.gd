@@ -9,7 +9,7 @@ var classroom_loaded:bool=false
 
 @onready var camerapivot:Node3D=$CameraPivot
 
-@export var rotation_speed_degrees:float=90
+@export var rotation_speed_degrees:float=2
 
 func _ready() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
@@ -40,8 +40,14 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 	else:
-		var rotation_direction:float=Input.get_axis("move_right","move_left")
-		rotation_degrees.y+=rotation_direction*rotation_speed_degrees*delta
+		if Input.is_action_pressed("move_left"):
+			if rotation_degrees.y<-120 or 170<rotation_degrees.y and 180>rotation_degrees.y:
+				rotate_y(rotation_speed_degrees*delta)
+				
+		if Input.is_action_pressed("move_right"):
+			if rotation_degrees.y<0:
+				rotate_y(-rotation_speed_degrees*delta)
+				print(rotation_degrees.y)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
