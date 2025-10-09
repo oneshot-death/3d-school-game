@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("move_right"):
 			if rotation_degrees.y<0:
 				rotate_y(-rotation_speed_degrees*delta)
-				print(rotation_degrees.y)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
