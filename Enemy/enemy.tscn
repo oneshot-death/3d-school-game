@@ -11,7 +11,7 @@ albedo_color = Color(0.98160654, 0, 0.08311493, 1)
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_2pb1h")
-rotation_speed_degrees = 1.5
+rotation_speed_degrees = 50.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_hvfyp")
