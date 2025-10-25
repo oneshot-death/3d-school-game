@@ -1,37 +1,31 @@
-extends CharacterBody3D
+extends Node3D
 
-@export var rotation_speed_degrees:float=90
+@export var rotation_speed_degrees: float = 180.0 # degrees per second
+@export var wait_time: float = 2.0               # seconds to wait after rotating 180°
 
-@onready var timer:Timer=$Timer
+@onready var timer: Timer = $Timer
 
-var target_angle:float=180.0
-var rotating_left:bool=true
-#var rotating_right:bool=false
-var start_angle:float
-
-var alternate_check_for_game_over:int=0
-
-var game_over_send:bool=false
+var rotating: bool = true
+var rotated_angle: float = 0.0
+var direction: int = 1  # 1 = clockwise, -1 = counterclockwise
 
 func _ready() -> void:
-	start_angle=rotation_degrees.y
-	var player=get_tree().get_first_node_in_group("player")
-	
-func _physics_process(delta: float) -> void:
-	if rotating_left:
-		rotation_degrees.y+=rotation_speed_degrees*delta
-		if rotation_degrees.y-start_angle>=target_angle:
-			rotating_left=false
-			alternate_check_for_game_over+=1
-			if alternate_check_for_game_over%2==0 && game_over_send==false: #check if enemy is looking at player again
-				game_over_send=true
-			timer.start()
-			start_angle=rotation_degrees.y
-		
-func _process(delta: float) -> void:
-	pass #maybe run a signal that connects to player anytime game_over_send is true
+	timer.wait_time = wait_time
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout)
 
+func _process(delta: float) -> void:
+	if rotating:
+		var rotation_amount = rotation_speed_degrees * delta
+		rotated_angle += rotation_amount
+
+		rotate_y(deg_to_rad(rotation_amount * direction))
+
+		if rotated_angle >= 180.0:
+			rotated_angle = 0.0
+			rotating = false
+			direction *= -1
+			timer.start()
 
 func _on_timer_timeout() -> void:
-	rotating_left=true
-	game_over_send=false
+	rotating = true
