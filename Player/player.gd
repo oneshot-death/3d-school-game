@@ -6,8 +6,10 @@ const JUMP_VELOCITY = 4.5
 
 var mouse_motion=Vector2.ZERO
 var classroom_loaded:bool=false
+var game_over_maybe:bool=false
 
 @onready var camerapivot:Node3D=$CameraPivot
+@onready var game_over_screen:Control=$"../GameOverScreen"
 
 @export var rotation_speed_degrees:float=2
 
@@ -60,5 +62,12 @@ func handle_camera_rotation() -> void:
 	camerapivot.rotate_x(mouse_motion.y)
 	camerapivot.rotation_degrees.x=clampf(camerapivot.rotation_degrees.x,-90.0,90.0)
 	mouse_motion=Vector2.ZERO
+	
+func _process(delta: float) -> void:
+	if game_over_maybe==true:
+		if -165<rotation_degrees.y and rotation_degrees.y>-180 or 176<rotation_degrees.y and rotation_degrees.y>180:
+			pass
+		else:
+			game_over_screen.game_over()
 	
 	
