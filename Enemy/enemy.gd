@@ -32,9 +32,9 @@ func _physics_process(delta: float) -> void:
 			direction *= -1
 			timer.start()
 		
-		if rotating_even==2:
-			player.game_over_maybe=true
-			rotating_even=0
+	if rotating_even==2 and rotating==false:
+		player.game_over_maybe=true
+		rotating_even=0
 			
 
 func _on_timer_timeout() -> void:

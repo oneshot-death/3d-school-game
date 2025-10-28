@@ -49,6 +49,12 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("move_right"):
 			if rotation_degrees.y<0:
 				rotate_y(-rotation_speed_degrees*delta)
+				
+	if game_over_maybe==true:
+		if -165>rotation_degrees.y and (176<rotation_degrees.y==false and rotation_degrees.y>180==false):
+			get_tree().paused=true
+			game_over_screen.game_over()
+
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -62,12 +68,6 @@ func handle_camera_rotation() -> void:
 	camerapivot.rotate_x(mouse_motion.y)
 	camerapivot.rotation_degrees.x=clampf(camerapivot.rotation_degrees.x,-90.0,90.0)
 	mouse_motion=Vector2.ZERO
-	
-func _process(delta: float) -> void:
-	if game_over_maybe==true:
-		if -165<rotation_degrees.y and rotation_degrees.y>-180 or 176<rotation_degrees.y and rotation_degrees.y>180:
-			pass
-		else:
-			game_over_screen.game_over()
+
 	
 	
