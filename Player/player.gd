@@ -46,12 +46,14 @@ func _physics_process(delta: float) -> void:
 			if rotation_degrees.y<-120 or 170<rotation_degrees.y and 180>rotation_degrees.y:
 				rotate_y(rotation_speed_degrees*delta)
 				
+				
 		if Input.is_action_pressed("move_right"):
 			if rotation_degrees.y<0:
 				rotate_y(-rotation_speed_degrees*delta)
 				
+				
 	if game_over_maybe==true:
-		if -165>rotation_degrees.y and (176<rotation_degrees.y==false and rotation_degrees.y>180==false):
+		if -165<rotation_degrees.y and not (rotation_degrees.y>=176 and rotation_degrees.y<=180):
 			get_tree().paused=true
 			game_over_screen.game_over()
 
