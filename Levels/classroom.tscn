@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dufs03881x6hv"]
+[gd_scene load_steps=11 format=3 uid="uid://dufs03881x6hv"]
 
 [ext_resource type="PackedScene" uid="uid://ddxwbra1ge8jn" path="res://Assets/Table/table.tscn" id="1_cn5g2"]
 [ext_resource type="Script" uid="uid://dmtg1mky8mhtm" path="res://Levels/classroom.gd" id="1_h2dca"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0kr2ypx36t7a" path="res://Player/player.tscn" id="3_i5tmy"]
 [ext_resource type="PackedScene" uid="uid://vp7h67oaouuh" path="res://Enemy/enemy.tscn" id="5_12ryn"]
 [ext_resource type="PackedScene" uid="uid://bh44iwi8blqoo" path="res://UI/game_over_screen.tscn" id="6_qlpa1"]
+[ext_resource type="PackedScene" uid="uid://doh0a88p3t1fr" path="res://UI/stress.tscn" id="7_yg7q3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcmfc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -49,3 +50,5 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.2
 
 [node name="GameOverScreen" parent="." instance=ExtResource("6_qlpa1")]
 visible = false
+
+[node name="Stress" parent="." instance=ExtResource("7_yg7q3")]

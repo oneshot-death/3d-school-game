@@ -13,6 +13,8 @@ var game_over_maybe:bool=false
 
 @export var rotation_speed_degrees:float=2
 
+signal relief
+
 func _ready() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 	
@@ -45,11 +47,17 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("move_left"):
 			if rotation_degrees.y<-120 or 170<rotation_degrees.y and 180>rotation_degrees.y:
 				rotate_y(rotation_speed_degrees*delta)
+				print(rotation_degrees.y)
 				
 				
 		if Input.is_action_pressed("move_right"):
 			if rotation_degrees.y<0:
 				rotate_y(-rotation_speed_degrees*delta)
+				print(rotation_degrees.y)
+				
+		if rotation_degrees.y>-135 and rotation_degrees.y<-118:
+			relief.emit()
+			print("reliefff")
 				
 				
 	if game_over_maybe==true:
