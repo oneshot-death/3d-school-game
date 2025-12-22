@@ -1,0 +1,146 @@
+[gd_scene load_steps=14 format=3 uid="uid://dufs03881x6hv"]
+
+[ext_resource type="PackedScene" uid="uid://ddxwbra1ge8jn" path="res://Assets/Table/table.tscn" id="1_cn5g2"]
+[ext_resource type="Script" uid="uid://dmtg1mky8mhtm" path="res://Levels/classroom.gd" id="1_h2dca"]
+[ext_resource type="PackedScene" uid="uid://b7mrmm2x01pgy" path="res://Assets/Chair/chair.tscn" id="2_i5tmy"]
+[ext_resource type="PackedScene" uid="uid://d0kr2ypx36t7a" path="res://Player/player.tscn" id="3_i5tmy"]
+[ext_resource type="PackedScene" uid="uid://vp7h67oaouuh" path="res://Enemy/enemy.tscn" id="5_12ryn"]
+[ext_resource type="PackedScene" uid="uid://bh44iwi8blqoo" path="res://UI/game_over_screen.tscn" id="6_qlpa1"]
+[ext_resource type="PackedScene" uid="uid://doh0a88p3t1fr" path="res://UI/stress.tscn" id="7_yg7q3"]
+[ext_resource type="PackedScene" uid="uid://5r6mdmt83jlb" path="res://Assets/Structures/floor_ceiling_1.glb" id="8_rnmp5"]
+[ext_resource type="PackedScene" uid="uid://dg7es1inpwh26" path="res://Assets/Structures/wall_1.glb" id="9_djn46"]
+[ext_resource type="PackedScene" uid="uid://2njy44cq8fkn" path="res://Assets/Structures/window_2_single_no_glass.glb" id="10_uvqfh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rcmfc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_e5dw2"]
+sky_material = SubResource("ProceduralSkyMaterial_rcmfc")
+
+[sub_resource type="Environment" id="Environment_cn5g2"]
+background_mode = 2
+sky = SubResource("Sky_e5dw2")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Classroom" type="Node3D"]
+script = ExtResource("1_h2dca")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cn5g2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(32, 1, 32)
+
+[node name="Table" parent="." instance=ExtResource("1_cn5g2")]
+
+[node name="Chair" parent="." instance=ExtResource("2_i5tmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3697151, 0, -0.69883335)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_i5tmy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.33773738, 1, -1.075361)
+rotation_speed_degrees = 4.0
+
+[node name="Enemy" parent="." instance=ExtResource("5_12ryn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.23305535, 1, 2.4059172)
+
+[node name="GameOverScreen" parent="." instance=ExtResource("6_qlpa1")]
+visible = false
+
+[node name="Stress" parent="." instance=ExtResource("7_yg7q3")]
+rate = 2.5
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="floor_ceiling_12" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, 1.9090742, 0.010000566, 1.1573842)
+
+[node name="floor_ceiling_21" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, 1.9090742, 0.010000566, -1.7438321)
+
+[node name="floor_ceiling_13" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, -1.1084512, 0.010000566, 1.1573842)
+
+[node name="floor_ceiling_14" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, -1.0968219, 0.010000566, 4.1740885)
+
+[node name="floor_ceiling_17" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, -4.0992928, 0.010000566, 4.1740885)
+
+[node name="floor_ceiling_19" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, -7.06223, 0.010000566, 4.1740885)
+
+[node name="floor_ceiling_20" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, -7.06223, 0.010000566, 1.1635361)
+
+[node name="floor_ceiling_18" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, -4.0992928, 0.010000566, 1.1826138)
+
+[node name="floor_ceiling_15" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, 1.9244689, 0.010000566, 4.1655655)
+
+[node name="floor_ceiling_16" parent="Floor" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(-0.75, 6.556708e-08, 0, -6.556708e-08, -0.75, 0, 0, 0, 0.75, 1.9244689, 0.010000566, 4.1655655)
+
+[node name="Wall" type="Node" parent="."]
+
+[node name="wall_14" parent="Wall" instance=ExtResource("9_djn46")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.32, 0, -4.4383945)
+
+[node name="wall_13" parent="Wall" instance=ExtResource("9_djn46")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.32, 0, 3.624)
+
+[node name="wall_15" parent="Wall" instance=ExtResource("9_djn46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3185842, 0, 5.51831)
+
+[node name="wall_16" parent="Wall" instance=ExtResource("9_djn46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5791056, 0, 5.51831)
+
+[node name="wall_17" parent="Wall" instance=ExtResource("9_djn46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.450327, 0, 5.51831)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Wall/wall_17"]
+
+[node name="Window" type="Node" parent="."]
+
+[node name="window_2_single_no_glass2" parent="Window" instance=ExtResource("10_uvqfh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.32, 0, -0.395)
+
+[node name="TempLight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.28731042, 0.9578375, 0, -0.9578375, 0.28731042, 1.0102315, 2.4035356, 4.349082)
+
+[node name="Ceiling" type="Node" parent="."]
+
+[node name="floor_ceiling_22" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.7832714, 2.9611015, 4.157437)
+
+[node name="floor_ceiling_26" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.7832714, 2.9611015, 1.1702175)
+
+[node name="floor_ceiling_30" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.7832714, 2.9611015, -1.6903434)
+
+[node name="floor_ceiling_27" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.0587496, 2.9611015, 1.1702175)
+
+[node name="floor_ceiling_28" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -3.894474, 2.9611015, 1.1702175)
+
+[node name="floor_ceiling_29" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -6.857615, 2.9611015, 1.1702175)
+
+[node name="floor_ceiling_23" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.1391267, 2.9611015, 4.1473303)
+
+[node name="floor_ceiling_24" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -3.9941335, 2.9611015, 4.1687636)
+
+[node name="floor_ceiling_25" parent="Ceiling" instance=ExtResource("8_rnmp5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -6.8240175, 2.9611015, 4.15642)

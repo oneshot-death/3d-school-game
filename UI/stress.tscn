@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://doh0a88p3t1fr"]
+
+[ext_resource type="FontFile" uid="uid://c2w0v678ir17c" path="res://Font/OpenSans-VariableFont_wdth,wght.ttf" id="1_0rnw1"]
+[ext_resource type="Script" uid="uid://cl2vjo8uikg2y" path="res://UI/stress.gd" id="1_ttcnv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttcnv"]
+font = ExtResource("1_0rnw1")
+
+[node name="Stress" type="CanvasLayer"]
+script = ExtResource("1_ttcnv")
+rate = 5.0
+
+[node name="StressBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -27.0
+offset_right = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -51.0
+offset_right = 49.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stress Level:"
+label_settings = SubResource("LabelSettings_ttcnv")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddxwbra1ge8jn"]
+
+[ext_resource type="PackedScene" uid="uid://oecmomkwxao2" path="res://Assets/coffee_table_1_2.glb" id="1_to3tb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vd1by"]
+size = Vector3(1.5944519, 0.6693115, 0.58514404)
+
+[node name="Table" type="Node3D"]
+
+[node name="coffee_table_1_22" parent="." instance=ExtResource("1_to3tb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coffee_table_1_22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coffee_table_1_22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012619019, 0.34261388, -0.0043640137)
+shape = SubResource("BoxShape3D_vd1by")

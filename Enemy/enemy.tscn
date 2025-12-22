@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://vp7h67oaouuh"]
+
+[ext_resource type="Script" uid="uid://0qpm3reib48f" path="res://Enemy/enemy.gd" id="1_2pb1h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjnqo"]
+albedo_color = Color(0.98160654, 0, 0.08311493, 1)
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_2pb1h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_hvfyp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l8h54")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[node name="Eye" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1754545, 0.47177935, -0.010226756)
+size = Vector3(0.72330475, 0.45239258, 0.51348877)
+material = SubResource("StandardMaterial3D_xjnqo")
+
+[node name="Timer" type="Timer" parent="."]
