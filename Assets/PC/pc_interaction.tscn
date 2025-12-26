@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://solgjha5mwp5"]
+
+[ext_resource type="PackedScene" uid="uid://6fkc1be6asb7" path="res://Assets/Table/Desk.fbx" id="1_dbhih"]
+
+[node name="PCinteraction" type="Node3D"]
+
+[node name="Desk" parent="." instance=ExtResource("1_dbhih")]
