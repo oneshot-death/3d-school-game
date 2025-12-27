@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://cmr6gx04nernq"]
+[gd_scene load_steps=20 format=4 uid="uid://cmr6gx04nernq"]
 
 [ext_resource type="PackedScene" uid="uid://b2ad5ibymqupy" path="res://Assets/House/House_Small.fbx" id="1_7byhi"]
 [ext_resource type="Texture2D" uid="uid://b34utv4fh8xgr" path="res://Textures/PaintedMetal-ao.png" id="2_nw3x3"]
 [ext_resource type="PackedScene" uid="uid://d0kr2ypx36t7a" path="res://Player/player.tscn" id="3_nw3x3"]
+[ext_resource type="PackedScene" uid="uid://solgjha5mwp5" path="res://Assets/PC/pc_interaction.tscn" id="4_rryjb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rryjb"]
 resource_name = "Material"
@@ -146,3 +147,6 @@ shape = SubResource("ConcavePolygonShape3D_84lal")
 
 [node name="Player" parent="." index="24" instance=ExtResource("3_nw3x3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2504835, 2.3133001, -15.801741)
+
+[node name="PCinteraction" parent="." index="25" instance=ExtResource("4_rryjb")]
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 8.23399, 1.8513, -16.592255)
