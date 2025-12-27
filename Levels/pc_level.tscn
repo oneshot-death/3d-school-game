@@ -13,3 +13,9 @@ layout_mode = 0
 offset_top = 188.0
 offset_right = 1151.0
 offset_bottom = 636.0
+
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
