@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4iul5wlqyhp1"]
+[gd_scene load_steps=5 format=3 uid="uid://b4iul5wlqyhp1"]
 
 [ext_resource type="Script" uid="uid://jenieglh0feg" path="res://Levels/pc_level.gd" id="1_uco3t"]
 [ext_resource type="Texture2D" uid="uid://dntmg7subfps6" path="res://Assets/Terminal/terminal_huh.png" id="2_xw82a"]
 [ext_resource type="FontFile" uid="uid://bjtc1ox4h6n4c" path="res://Assets/Terminal/Terminus (TTF) 500.ttf" id="3_xw82a"]
+
+[sub_resource type="Environment" id="Environment_xw82a"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.2
+glow_blend_mode = 1
 
 [node name="PC_level" type="Node2D"]
 script = ExtResource("1_uco3t")
@@ -20,6 +26,7 @@ offset_left = 436.0
 offset_top = 389.0
 offset_right = 1397.0
 offset_bottom = 837.0
+theme_override_colors/default_color = Color(1, 0.54901963, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_xw82a")
 theme_override_font_sizes/normal_font_size = 20
 
@@ -29,6 +36,7 @@ offset_left = 445.0
 offset_top = 242.0
 offset_right = 1398.0
 offset_bottom = 362.0
+theme_override_colors/font_color = Color(1, 0.54901963, 0, 1)
 theme_override_fonts/font = ExtResource("3_xw82a")
 theme_override_font_sizes/font_size = 64
 text = "NOTEPAD"
@@ -39,5 +47,11 @@ wait_time = 0.08
 one_shot = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xw82a")
+
+[node name="CursorBlink" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="CursorBlink" to="." method="_on_cursor_blink_timeout"]
