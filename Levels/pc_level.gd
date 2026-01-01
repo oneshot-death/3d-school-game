@@ -22,6 +22,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			string_length=string_length+1
 			notepad.text=random.substr(0,string_length)
 			#notepad.text=notepad.text+"█"
+			
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		get_tree().change_scene_to_file("res://Assets/House/house_small_inherited.tscn")
 
 
 func _on_cooldown_timeout() -> void:
