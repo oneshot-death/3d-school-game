@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 var mouse_motion=Vector2.ZERO
 var classroom_loaded:bool=false
 var game_over_maybe:bool=false
+var player_position
 
 @onready var camerapivot:Node3D=$CameraPivot
 @onready var game_over_screen:Control=$"../GameOverScreen"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwc60yy0lgwiu"]
+
+[ext_resource type="PackedScene" uid="uid://beyvudpcr02nj" path="res://Assets/cesca-chair.glb" id="1_px06n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmbaa"]
+size = Vector3(1.0947266, 1.1408386, 2.1038818)
+
+[node name="Cesca Chair" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_px06n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.099536)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene/Sketchfab_model/cesca-chair_obj_cleaner_materialmerger_gles" index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/cesca-chair_obj_cleaner_materialmerger_gles/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22264671, -2.1300478, 0.00018310547)
+shape = SubResource("BoxShape3D_hmbaa")
+
+[editable path="Sketchfab_Scene"]

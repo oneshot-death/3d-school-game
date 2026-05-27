@@ -6,6 +6,7 @@ var string_length:int=0
 var string_update:bool=true
 var cursor:String="█"
 var cursor_visible:bool=true
+var player_position
 
 @onready var notepad:RichTextLabel=$TextureRect/RichTextLabel
 @onready var cooldown:Timer=$cooldown
