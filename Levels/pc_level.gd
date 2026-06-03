@@ -6,7 +6,6 @@ var string_length:int=0
 var string_update:bool=true
 var cursor:String="█"
 var cursor_visible:bool=true
-var player_position
 
 @onready var notepad:RichTextLabel=$TextureRect/RichTextLabel
 @onready var cooldown:Timer=$cooldown
@@ -14,6 +13,7 @@ var player_position
 
 func _ready() -> void:
 	notepad.text=notepad.text+"█"
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and not event.is_pressed():

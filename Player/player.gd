@@ -7,7 +7,6 @@ const JUMP_VELOCITY = 4.5
 var mouse_motion=Vector2.ZERO
 var classroom_loaded:bool=false
 var game_over_maybe:bool=false
-var player_position
 
 @onready var camerapivot:Node3D=$CameraPivot
 @onready var game_over_screen:Control=$"../GameOverScreen"
@@ -19,6 +18,9 @@ signal no_relief
 
 func _ready() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	if GameState.saved_position==true:
+		global_position=GameState.player_position
+		
 	
 
 func _physics_process(delta: float) -> void:
