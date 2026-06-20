@@ -170,3 +170,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2504835, 2.3133001, -15.801
 
 [node name="PCinteraction" parent="." index="27" instance=ExtResource("4_rryjb")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 8.23399, 1.8513, -16.592255)
+
+[node name="Kitchen" type="Node" parent="." index="28"]

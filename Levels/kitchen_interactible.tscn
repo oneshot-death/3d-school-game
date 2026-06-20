@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63sje0ymhu4b"]
+
+[ext_resource type="PackedScene" uid="uid://dbeymkbb27qyw" path="res://Assets/Kitchen/kitchen_c4d.glb" id="1_a0kym"]
+
+[node name="Kitchen Interactible" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_a0kym")]
