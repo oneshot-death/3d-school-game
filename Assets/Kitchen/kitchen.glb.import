@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dbeymkbb27qyw"
-path="res://.godot/imported/kitchen_c4d.glb-245b543996996bb10bfe1a7f50d1f9e9.scn"
+uid="uid://dsqlr7noilv8a"
+path="res://.godot/imported/kitchen.glb-f712895ce5d5d0f4154956fed5205264.scn"
 
 [deps]
 
-source_file="res://Assets/Kitchen/kitchen_c4d.glb"
-dest_files=["res://.godot/imported/kitchen_c4d.glb-245b543996996bb10bfe1a7f50d1f9e9.scn"]
+source_file="res://Assets/Kitchen/kitchen.glb"
+dest_files=["res://.godot/imported/kitchen.glb-f712895ce5d5d0f4154956fed5205264.scn"]
 
 [params]
 
@@ -33,10 +33,10 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="res://addons/physics_collision_import_generator/import_scripts/import_physics_box.gd"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
 gltf/naming_version=2
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=0
