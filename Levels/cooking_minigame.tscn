@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://we8wxsnfmvks"]
+[gd_scene load_steps=2 format=3 uid="uid://we8wxsnfmvks"]
+
+[ext_resource type="Texture2D" uid="uid://db5vuu8f2gasf" path="res://Assets/Kitchen/stove_cropped.jpg" id="1_61hay"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("1_61hay")

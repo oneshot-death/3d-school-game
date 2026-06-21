@@ -2921,6 +2921,7 @@ mesh = SubResource("ArrayMesh_6ljvp")
 skeleton = NodePath("")
 
 [node name="Box005_������_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/Box005/Box005_������_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_fxgeh")
 
 [node name="Line002" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -2933,6 +2934,7 @@ mesh = SubResource("ArrayMesh_qsk06")
 skeleton = NodePath("")
 
 [node name="Line002_Aluminium Black Anodized0_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/Line002/Line002_Aluminium Black Anodized0_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_mvubd")
 
 [node name="Box006" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -3212,6 +3214,7 @@ mesh = SubResource("ArrayMesh_3us1g")
 skeleton = NodePath("")
 
 [node name="Box042_Ardesia_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/Box042/Box042_Ardesia_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_xcvmx")
 
 [node name="Line003" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -3224,6 +3227,7 @@ mesh = SubResource("ArrayMesh_4rgff")
 skeleton = NodePath("")
 
 [node name="Line003_Aluminium Black Anodized0_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/Line003/Line003_Aluminium Black Anodized0_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_ud4o5")
 
 [node name="Box043" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -3385,6 +3389,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_we5hw")
 
 [node name="ECS 620 USC_����������_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/Induction/ECS 620 USC_����������_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_grl8j")
 
 [node name="blanco_logo" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -3534,6 +3539,7 @@ mesh = SubResource("ArrayMesh_0v6u0")
 skeleton = NodePath("")
 
 [node name="Box069_Antracite_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/Box069/Box069_Antracite_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_lb1wo")
 
 [node name="Box070" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -3614,6 +3620,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_fp87b")
 
 [node name="ondafasad-door_010_Antracite_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/ondafasad-door_010/Object_133/ondafasad-door_010_Antracite_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_5yr28")
 
 [node name="ondafasad-door_011" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
@@ -3630,6 +3637,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_gj58f")
 
 [node name="ondafasad-door_011_Antracite_0_CollisionShape" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode/ondafasad-door_011/Object_136/ondafasad-door_011_Antracite_0_StaticBody"]
+visible = false
 shape = SubResource("BoxShape3D_ifi2t")
 
 [node name="ondafasad-door_012" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/879c4261e2c442d48dea2b40179840b4_fbx/Object_2/RootNode"]
