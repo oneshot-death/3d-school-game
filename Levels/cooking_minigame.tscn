@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://we8wxsnfmvks"]
+[gd_scene load_steps=9 format=3 uid="uid://we8wxsnfmvks"]
 
 [ext_resource type="Texture2D" uid="uid://db5vuu8f2gasf" path="res://Assets/Kitchen/stove_cropped.jpg" id="1_cp0dv"]
-[ext_resource type="Texture2D" uid="uid://c8wrt22bpxnws" path="res://Assets/Kitchen/frying-pan-temp.png" id="2_4xaru"]
+[ext_resource type="Texture2D" uid="uid://bnyu7r8ymmlon" path="res://Assets/Sprites/pan.png" id="2_cp0dv"]
 [ext_resource type="Texture2D" uid="uid://dtcorc7muhpdv" path="res://Assets/Sprites/cooking-sheet.png" id="3_cp0dv"]
+[ext_resource type="Texture2D" uid="uid://crmc437642od7" path="res://Assets/Sprites/egg-basic.png" id="4_h635q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h635q"]
 atlas = ExtResource("3_cp0dv")
@@ -44,14 +45,18 @@ layout_mode = 2
 texture = ExtResource("1_cp0dv")
 
 [node name="Pan" type="Sprite2D" parent="MarginContainer"]
-position = Vector2(541.945, 400.664)
-scale = Vector2(2.76, 2.76)
-texture = ExtResource("2_4xaru")
+position = Vector2(321.365, 499.174)
+texture = ExtResource("2_cp0dv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/Pan"]
-position = Vector2(-46.1981, 30.019556)
-scale = Vector2(0.1, 0.1)
+position = Vector2(117.05498, -38.66401)
+scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_6xssh")
 animation = &"cooking"
 frame = 2
 frame_progress = 1.0
+
+[node name="Egg" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(963.00006, 425.00003)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_h635q")
