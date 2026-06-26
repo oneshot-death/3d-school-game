@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://we8wxsnfmvks"]
+[gd_scene load_steps=11 format=3 uid="uid://we8wxsnfmvks"]
 
 [ext_resource type="Texture2D" uid="uid://db5vuu8f2gasf" path="res://Assets/Kitchen/stove_cropped.jpg" id="1_cp0dv"]
+[ext_resource type="Script" uid="uid://bsmvc0ai8njdk" path="res://Levels/cooking_minigame.gd" id="1_vl7ry"]
 [ext_resource type="Texture2D" uid="uid://bnyu7r8ymmlon" path="res://Assets/Sprites/pan.png" id="2_cp0dv"]
+[ext_resource type="PackedScene" uid="uid://cplt06ldue0dc" path="res://Assets/Kitchen/draggable_food.tscn" id="2_h635q"]
 [ext_resource type="Texture2D" uid="uid://dtcorc7muhpdv" path="res://Assets/Sprites/cooking-sheet.png" id="3_cp0dv"]
-[ext_resource type="Texture2D" uid="uid://crmc437642od7" path="res://Assets/Sprites/egg-basic.png" id="4_h635q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h635q"]
+radius = 138.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h635q"]
 atlas = ExtResource("3_cp0dv")
@@ -35,28 +39,38 @@ animations = [{
 }]
 
 [node name="Cooking" type="Node2D"]
+script = ExtResource("1_vl7ry")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1151.0
 offset_bottom = 643.0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
 texture = ExtResource("1_cp0dv")
 
-[node name="Pan" type="Sprite2D" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pan" type="Sprite2D" parent="."]
 position = Vector2(321.365, 499.174)
 texture = ExtResource("2_cp0dv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/Pan"]
-position = Vector2(117.05498, -38.66401)
-scale = Vector2(0.23, 0.23)
+[node name="Area2D" type="Area2D" parent="Pan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Area2D"]
+position = Vector2(159.63501, -41.17401)
+shape = SubResource("CircleShape2D_h635q")
+
+[node name="EggCooking" type="AnimatedSprite2D" parent="Pan"]
+visible = false
+position = Vector2(116.63501, -38.17401)
+scale = Vector2(0.22999999, 0.22999999)
 sprite_frames = SubResource("SpriteFrames_6xssh")
 animation = &"cooking"
 frame = 2
 frame_progress = 1.0
 
-[node name="Egg" type="Sprite2D" parent="MarginContainer"]
+[node name="Food" parent="." instance=ExtResource("2_h635q")]
 position = Vector2(963.00006, 425.00003)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("4_h635q")
+
+[connection signal="area_shape_entered" from="Pan/Area2D" to="." method="_on_area_2d_area_shape_entered"]

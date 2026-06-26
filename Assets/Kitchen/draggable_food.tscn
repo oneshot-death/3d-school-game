@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cplt06ldue0dc"]
+
+[ext_resource type="Texture2D" uid="uid://crmc437642od7" path="res://Assets/Sprites/egg-basic.png" id="1_yk05o"]
+[ext_resource type="Script" uid="uid://cjb8e7l8t83re" path="res://Assets/Kitchen/draggable_food.gd" id="2_yjin0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vl7ry"]
+radius = 40.0
+
+[node name="Food" type="Sprite2D"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_yk05o")
+script = ExtResource("2_yjin0")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2751.4285, -1214.2858)
+scale = Vector2(2.8571427, 2.8571427)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(976, 409)
+shape = SubResource("CircleShape2D_vl7ry")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
