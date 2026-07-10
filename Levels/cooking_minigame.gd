@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var animation:AnimatedSprite2D=$Pan/EggCooking
-@onready var food:Sprite2D=$Food
+@onready var food:AnimatedSprite2D=$Food
 
 var food_entered:bool=false
 var lmb_event:bool=true
@@ -33,4 +33,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	food_entered=true
+	#food_entered=pass
+	pass

@@ -1,14 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://cplt06ldue0dc"]
+[gd_scene load_steps=9 format=3 uid="uid://cplt06ldue0dc"]
 
-[ext_resource type="Texture2D" uid="uid://crmc437642od7" path="res://Assets/Sprites/egg-basic.png" id="1_yk05o"]
+[ext_resource type="Texture2D" uid="uid://casxg6eg6eo6e" path="res://Assets/Sprites/cooking-sheet-updated.png" id="1_yjin0"]
 [ext_resource type="Script" uid="uid://cjb8e7l8t83re" path="res://Assets/Kitchen/draggable_food.gd" id="2_yjin0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70bqc"]
+atlas = ExtResource("1_yjin0")
+region = Rect2(5580, 0, 1395, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t2ec"]
+atlas = ExtResource("1_yjin0")
+region = Rect2(0, 0, 1395, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pypwg"]
+atlas = ExtResource("1_yjin0")
+region = Rect2(1395, 0, 1395, 786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kve6q"]
+atlas = ExtResource("1_yjin0")
+region = Rect2(2790, 0, 1395, 786)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1xwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70bqc")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_2t2ec")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_pypwg")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_kve6q")
+}],
+"loop": false,
+"name": &"egg-cooking",
+"speed": 1.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vl7ry"]
 radius = 40.0
 
-[node name="Food" type="Sprite2D"]
+[node name="Food" type="AnimatedSprite2D"]
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("1_yk05o")
+sprite_frames = SubResource("SpriteFrames_m1xwg")
+animation = &"egg-cooking"
 script = ExtResource("2_yjin0")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -16,7 +53,8 @@ position = Vector2(-2751.4285, -1214.2858)
 scale = Vector2(2.8571427, 2.8571427)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(976, 409)
+position = Vector2(888, 359.00003)
 shape = SubResource("CircleShape2D_vl7ry")
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
