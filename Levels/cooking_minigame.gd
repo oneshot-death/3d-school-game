@@ -11,17 +11,18 @@ var run_once:bool=false #can be set to false again once the food (the body) exit
 func _ready() -> void:
 	pass # Replace with function body.
 	
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+func _input(_event: InputEvent) -> void:
+	'if event is InputEventMouseButton:
 		if event.button_index==MOUSE_BUTTON_LEFT and !event.pressed and food_entered==true and run_once==false:
 			run_once=true
 			food.visible=false
 			animation.visible=true
-			animation.play()
+			animation.play()'
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 '	if food_entered==true:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)==false:
@@ -32,6 +33,6 @@ func _process(delta: float) -> void:
 				run_once=true'
 
 
-func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	#food_entered=pass
 	pass

@@ -22,7 +22,7 @@ region = Rect2(2790, 0, 1395, 786)
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1xwg"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.01,
 "texture": SubResource("AtlasTexture_70bqc")
 }, {
 "duration": 5.0,
@@ -56,5 +56,5 @@ scale = Vector2(2.8571427, 2.8571427)
 position = Vector2(888, 359.00003)
 shape = SubResource("CircleShape2D_vl7ry")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
