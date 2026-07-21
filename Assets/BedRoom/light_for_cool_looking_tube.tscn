@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qmdu3hyosdgy"]
+
+[node name="OmniLight3D" type="OmniLight3D"]
+light_color = Color(0.12156863, 0.4509804, 0.6784314, 1)
+light_energy = 2.0
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 150.0
+distance_fade_shadow = 175.0
+distance_fade_length = 30.0
